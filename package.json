@@ -1,0 +1,17 @@
+{
+  "name": "ts-todo",
+  "version": "1.0.0",
+  "description": "typescript-todo",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.18",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  }
+}
