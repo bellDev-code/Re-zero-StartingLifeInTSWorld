@@ -17,3 +17,23 @@ function printCoord(pt) {
     console.log("The coordinate's x value is " + pt.y);
 }
 printCoord({ x: 3, y: 5 });
+function printName1(obj) {
+    var _a;
+    console.log((_a = obj.last) === null || _a === void 0 ? void 0 : _a.toUpperCase());
+}
+// 둘 다 OK
+printName1({ first: 'Bob' });
+printName1({ first: 'Alice', last: 'Alisson' });
+function printName2(obj) {
+    var _a;
+    // 오류 - obj.last의 값이 제공되지 않는다면 프로그램이 멈춥니다.
+    console.log(obj.last.toUpperCase());
+    if (obj.last !== undefined) {
+        // OK
+        console.log(obj.last.toUpperCase());
+    }
+    console.log((_a = obj.last) === null || _a === void 0 ? void 0 : _a.toUpperCase());
+}
+// 둘 다 OK
+printName1({ first: 'Bob' });
+printName1({ first: 'Alice', last: 'Alisson' });
