@@ -72,9 +72,8 @@ function welcomePeople(x) {
 function getFirstThree(x) {
     return x.slice(0, 3);
 }
-// 앞서 사용한 예제와 동일한 코드
-function printCood(pt) {
-    console.log("The coordinate's x value is " + pt.x);
-    console.log("The coordinate's y value is " + pt.y);
+function printCoord(pt) {
+    console.log("The coordinate;s x value is " + pt.x);
+    console.log("The coordinate;s x value is " + pt.y);
 }
-printCood({ x: 100, y: 100 });
+printCoord({ x: 100, y: 100 });

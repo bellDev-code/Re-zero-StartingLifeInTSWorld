@@ -87,15 +87,28 @@ function getFirstThree(x: number[] | string) {
 }
 
 // 타입 별칭
-type Point = {
-  x: number;
-  y: number;
-}
+// type Point = {
+//   x: number;
+//   y: number;
+// }
 
 // 앞서 사용한 예제와 동일한 코드
-function printCood(pt: Point) {
-  console.log("The coordinate's x value is " + pt.x)
-  console.log("The coordinate's y value is " + pt.y)
+// function printCood(pt: Point) {
+//   console.log("The coordinate's x value is " + pt.x)
+//   console.log("The coordinate's y value is " + pt.y)
+// }
+
+// printCood({x: 100, y: 100})
+
+// 인터페이스
+interface Point {
+	x: number;
+	y: number;
 }
 
-printCood({x: 100, y: 100})
+function printCoord(pt: Point) {
+	console.log("The coordinate;s x value is " + pt.x)
+	console.log("The coordinate;s x value is " + pt.y)
+}
+
+printCoord({ x: 100, y: 100 })
