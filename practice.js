@@ -76,9 +76,28 @@ function printCoord(pt) {
     console.log("The coordinate;s x value is " + pt.x);
     console.log("The coordinate;s x value is " + pt.y);
 }
-printCoord({ x: 100, y: 100 });
 function printAnimal(bear) {
     console.log("곰은 항상 크아아앙이라고 " + bear.name + "가 말했다.");
     console.log("곰은 꿀을 좋아한다." + bear.honey);
 }
-printAnimal({ name: "그리즐리", honey: true });
+// printAnimal({name: "그리즐리", honey: true})
+var changingString = "Hello World";
+changingString = "winter is comming!";
+changingString;
+var constantString = "KARINA";
+constantString;
+// console.log(changingString, constantString)
+function printText(s, alignment) {
+    // ...
+    console.log(s, alignment);
+}
+printText("Hello, world", "left");
+function compare(a, b) {
+    return a === b ? 0 : a > b ? 1 : -1;
+}
+function configure(x) {
+    console.log(x);
+}
+// configure({width: 100});
+// configure("auto")
+// configure("automatic")

@@ -111,7 +111,7 @@ function printCoord(pt: Point) {
 	console.log("The coordinate;s x value is " + pt.y)
 }
 
-printCoord({ x: 100, y: 100 })
+// printCoord({ x: 100, y: 100 })
 
 // 인터페이스 추가하기
 interface Animal {
@@ -127,4 +127,41 @@ function printAnimal(bear: Animal) {
 	console.log("곰은 꿀을 좋아한다." + bear.honey)
 }
 
-printAnimal({name: "그리즐리", honey: true})
+// printAnimal({name: "그리즐리", honey: true})
+
+let changingString = "Hello World";
+changingString = "winter is comming!"
+
+changingString;
+
+const constantString = "KARINA"
+constantString;
+
+// console.log(changingString, constantString)
+
+function printText(s: string, alignment: "left" | "right" | "center") {
+	// ...
+  console.log(s, alignment)
+}
+
+printText("Hello, world", "left");
+
+function compare(a: string, b: string): -1 | 0 | 1 {
+	return a === b ? 0 : a > b ? 1: -1;
+}
+
+// console.log(compare("IU", "KARINA"))
+// console.log(compare("WINTER", "WINTER"))
+// console.log(compare("WINTER", "IU"))
+
+interface Options {
+  width: number;
+}
+
+function configure(x: Options | "auto") {
+  console.log(x)
+}
+
+// configure({width: 100});
+// configure("auto")
+// configure("automatic")
