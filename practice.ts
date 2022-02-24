@@ -112,3 +112,19 @@ function printCoord(pt: Point) {
 }
 
 printCoord({ x: 100, y: 100 })
+
+// 인터페이스 추가하기
+interface Animal {
+  name: string
+}
+
+interface Animal {
+  honey: boolean
+}
+
+function printAnimal(bear: Animal) {
+  console.log("곰은 항상 크아아앙이라고 " + bear.name + "가 말했다.")
+	console.log("곰은 꿀을 좋아한다." + bear.honey)
+}
+
+printAnimal({name: "그리즐리", honey: true})
