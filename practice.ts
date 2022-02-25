@@ -165,3 +165,7 @@ function configure(x: Options | "auto") {
 // configure({width: 100});
 // configure("auto")
 // configure("automatic")
+
+// 리터럴 추론 오류 예시
+// const req = { url: "https://example.com", method: "GET" };
+// handleRequest(req.url, req.method);
