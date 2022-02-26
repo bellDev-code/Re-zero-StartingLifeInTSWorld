@@ -104,3 +104,7 @@ function configure(x) {
 // 리터럴 추론 오류 예시
 // const req = { url: "https://example.com", method: "GET" };
 // handleRequest(req.url, req.method);
+function print(char) {
+    console.log(char);
+}
+print("흐에");
