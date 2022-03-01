@@ -34,16 +34,26 @@
 // while을 끝내려면 조건문을 false!
 
 // 시작원소 끝원소를 알아야한다.
-// function iterable(str: string) {
-//     let index = 0;
-//     while (index < str.length) {
-//         index++
-//         console.log(str)
-//     }
-// }
-// do while
+function iterable(str: string) {
+    let index = 0;
+    while (index < str.length) {
+        console.log(str[index])
+        index++
+    }
+}
+// do while 
+// 차이점 - while의 조건을 false로 바꿨을 때 나타난다.
+
+function doWhile(str :string) {
+    let index = 0;
+    do {
+       console.log(str[index])
+       index++
+    } while(index < str.length);
+}
 
 // iterable("안녕하세요")
+doWhile("안녕하세요")
 
 // 문자열, 길이 인수로 받아서 길이 이상이면 true 출력 이하면 false 출력
 function print(str: string, length: number) {
