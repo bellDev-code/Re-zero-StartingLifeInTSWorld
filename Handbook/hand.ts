@@ -61,4 +61,45 @@ let someValue: any = "this is a string"
 // let strLength: number = (<string>someValue).length;
 let strLength: number = (someValue as string).length;
 
-console.log(strLength)
+// console.log(strLength)
+
+// 첫 번째 인터페이스
+// function printLabel(labeledObj: {label: string}) {
+//     console.log(labeledObj.label)
+// }
+
+// let myObj = {size: 10, label: "Size 10 Object"}
+// printLabel(myObj);
+
+interface LabeledValue {
+    label: string;
+}
+
+function printLabel(labeledObj: LabeledValue) {
+    console.log(labeledObj.label)
+}
+
+let myObj = {size: 10, label: "Size 10 Object"}
+// printLabel(myObj)
+
+interface SquareConfig {
+    color?: string;
+    width?: number;
+}
+
+function createSquare(config: SquareConfig): {color: string; area: number} {
+    let newSquare = {color: "White", area: 100};
+
+    if(config.color) {
+        newSquare.color = config.color;
+    }
+
+    if(config.width) {
+        newSquare.area = config.width * config.width
+    }
+    return newSquare
+}
+
+let mySquare = createSquare({color: "black"})
+
+console.log(mySquare)
