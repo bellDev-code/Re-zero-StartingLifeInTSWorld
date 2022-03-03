@@ -102,4 +102,26 @@ function createSquare(config: SquareConfig): {color: string; area: number} {
 
 let mySquare = createSquare({color: "black"})
 
-console.log(mySquare)
+// console.log(mySquare)
+
+// interface Point {
+//     readonly x: number;
+//     readonly y: number;
+// }
+
+// let p1: Point = { x: 10, y: 5}
+// p1.x = 5
+
+// console.log(p1) // 오류
+
+let a: number[] = [1, 2, 3, 4]
+let ro: ReadonlyArray<number> = a;
+
+ro[0] = 12; // 오류 
+// Index signature in type 'readonly number[]' only permits reading
+ro.push(5) // 오류
+// Index signature in type 'readonly number[]' only permits reading
+ro.length = 100;
+// Cannot assign to 'length' because it is a read-only property.
+a = ro; // 오류
+// The type 'readonly number[]' is 'readonly' and cannot be assigned to the mutable type 'number[]'
