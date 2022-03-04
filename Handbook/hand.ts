@@ -82,25 +82,25 @@ function printLabel(labeledObj: LabeledValue) {
 let myObj = {size: 10, label: "Size 10 Object"}
 // printLabel(myObj)
 
-interface SquareConfig {
-    color?: string;
-    width?: number;
-}
+// interface SquareConfig {
+//     color?: string;
+//     width?: number;
+// }
 
-function createSquare(config: SquareConfig): {color: string; area: number} {
-    let newSquare = {color: "White", area: 100};
+// function createSquare(config: SquareConfig): {color: string; area: number} {
+//     let newSquare = {color: "White", area: 100};
 
-    if(config.color) {
-        newSquare.color = config.color;
-    }
+//     if(config.color) {
+//         newSquare.color = config.color;
+//     }
 
-    if(config.width) {
-        newSquare.area = config.width * config.width
-    }
-    return newSquare
-}
+//     if(config.width) {
+//         newSquare.area = config.width * config.width
+//     }
+//     return newSquare
+// }
 
-let mySquare = createSquare({color: "black"})
+// let mySquare = createSquare({color: "black"})
 
 // console.log(mySquare)
 
@@ -117,11 +117,35 @@ let mySquare = createSquare({color: "black"})
 let a: number[] = [1, 2, 3, 4]
 let ro: ReadonlyArray<number> = a;
 
-ro[0] = 12; // 오류 
+// ro[0] = 12; // 오류 
 // Index signature in type 'readonly number[]' only permits reading
-ro.push(5) // 오류
+// ro.push(5) // 오류
 // Index signature in type 'readonly number[]' only permits reading
-ro.length = 100;
+// ro.length = 100;
 // Cannot assign to 'length' because it is a read-only property.
-a = ro; // 오류
+// a = ro; // 오류
 // The type 'readonly number[]' is 'readonly' and cannot be assigned to the mutable type 'number[]'
+
+a = ro as number[];
+
+// interface SquareConfig {
+//     color?: string;
+//     width?: number;
+// }
+
+function createSquare(config: SquareConfig): { color: string; area: number; } {
+    // ...
+}
+
+// let mySquare = createSquare({ colour: "red", width: 100})
+
+// let mySquare = createSquare({width: 100, opacity: 0.5} as SquareConfig)
+
+interface SquareConfig {
+	color?: string;
+	width?: number;
+	[propName: string]: any;
+}
+
+let squareOption = {colour: "red", width: 100}
+let mySquare = createSquare(squareOption)
