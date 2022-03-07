@@ -149,3 +149,22 @@ interface SquareConfig {
 
 let squareOption = {colour: "red", width: 100}
 let mySquare = createSquare(squareOption)
+
+// 함수타입
+interface SearchFunc {
+    (source: string, subString: string): boolean;
+}
+
+let mySearch: SearchFunc;
+
+// 1.
+// mySearch = function(source: string, subString: string) {
+//     let result = source.search(subString);
+//     return result > -1;
+// }
+
+// 2. 위의 예제를 아래처럼 쓸 수 있다.
+mySearch = function(src: string, sub: string): boolean {
+    let result = src.search(sub);
+    return result > -1
+}
