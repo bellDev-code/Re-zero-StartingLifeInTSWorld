@@ -183,4 +183,4 @@ myArray = ["Bob", "Fred"]
 
 let myStr: string = myArray[0];
 
-console.log(myStr)m 겨
+console.log(myStr)
