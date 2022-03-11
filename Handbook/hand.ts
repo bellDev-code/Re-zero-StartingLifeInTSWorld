@@ -133,9 +133,9 @@ a = ro as number[];
 //     width?: number;
 // }
 
-function createSquare(config: SquareConfig): { color: string; area: number; } {
-    // ...
-}
+// function createSquare(config: SquareConfig): { color: string; area: number; } {
+//     // ...
+// }
 
 // let mySquare = createSquare({ colour: "red", width: 100})
 
@@ -147,8 +147,8 @@ interface SquareConfig {
 	[propName: string]: any;
 }
 
-let squareOption = {colour: "red", width: 100}
-let mySquare = createSquare(squareOption)
+// let squareOption = {colour: "red", width: 100}
+// let mySquare = createSquare(squareOption)
 
 // 함수타입
 interface SearchFunc {
@@ -168,3 +168,19 @@ mySearch = function(src: string, sub: string): boolean {
     let result = src.search(sub);
     return result > -1
 }
+
+// mySearch = function(src, sub) {
+//     let result = src.search(sub);
+//     return "string";
+// }
+
+interface StringArray {
+    [index: number]: string; 
+}
+
+let myArray: StringArray;
+myArray = ["Bob", "Fred"]
+
+let myStr: string = myArray[0];
+
+console.log(myStr)m 겨

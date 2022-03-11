@@ -8,9 +8,12 @@ const rl = readline.createInterface({
 let input = [];
 
 rl.on('line', function (line) {
-  input = line.split(' ');
+  let input = line.split(' ');
 
-  
+  let hour = Number(input[0])
+  let minutes = Number(input[1])
+
+  if() {}
 
 
 }).on('close', function () {

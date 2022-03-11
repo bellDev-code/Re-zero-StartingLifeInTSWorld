@@ -36,9 +36,49 @@
 
 
 // 윤년 문제
-function solution(year: number) {
-    
+// function solution(year: number) {
+//     if(year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+//         console.log(1)
+//     } else {
+//         console.log(0)
+//     }
+// }
+
+
+
+// function solution(x: number, y: number) {
+//     if(x >= 0 && y >= 0) {
+//         console.log(1)
+//     } else if(x <= 0 && y>= 0) {
+//         console.log(2)
+//     } else if(x <= 0 && y <= 0) {
+//         console.log(3)
+//     } else if(x >= 0 && y <= 0) {
+//         console.log(4)
+//     }
+// }
+
+function solution(hour: number, minutes: number) {
+  // 1. 시간은 24시간
+  // 2. 분은 60분
+  // 3. 시간 = x, 분 = y
+  // 4. 하루의 시작은 0:0, 끝은 23:59
+  // 5. 00시일때 -> 23시
+  // 6. 45분보다 작은 분일때
+  
+  if(minutes - 45 < 0) {
+    minutes = 60 + (minutes - 45)
+    hour -= 1
+
+    if(hour === -1) {
+    hour = 23
+    }
+  } else {
+    minutes -= 45
+  }
+
+  console.log(hour + " " + minutes)
 }
 
 
-export default solution;
+// export default solution;
