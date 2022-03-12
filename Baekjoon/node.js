@@ -8,34 +8,24 @@ const rl = readline.createInterface({
 let input = [];
 
 rl.on('line', function (line) {
-  let input = line.split(' ');
+  const [A, B, C] = line.split(' ').sort(function(a, b) {
+    return a - b; // 오름차순정리
+  })
 
-  // 시간과 분
-  // 시작하는 시각과 필요한 시간이 분단위로 주어졌을때
-  // 구하려는것 : 끝나는 시각을 계산하는 프로그램
+  // console.log([A, B, C])
 
-  // 1. 첫째 줄에는 현재 시각 (시간과 분)
-  // 2. 두 번째 줄에는 요리하는데 필요한 시간(0 <= C <= 1000)이 분단위
-  // 1. 하루는 1440분
-
-  let hour = Number(input[0].split(' '))
-  let minutes = Number(input[0].split(' '))
-  let cookT = Number(input[1])
-
-  if(minutes + cookT < 60) {
-    minutes = 60 + (minutes - 60)
-
-    if(minutes + cookT >= 60) {
-      minutes = 60 + (minutes - 60)
-      hour += 1
-    }
+  // 1. 조건은 쉬움 => 단순 비교
+  // 2. 이 세가지 숫자들을 어떻게 비교할껀가?
+  // 3. 여기서 같은 눈, 가장 큰 눈을 알아내야함
+  // 4. 배열 값 비교하기
+  // 5. sort 정리
+  if(A === B && B === C) {
+    console.log(10000 + A * 1000)
+  } else if(A === B || B === C) {
+    console.log(1000 + B * 100)
   } else {
-
   }
-
   
-
-
 }).on('close', function () {
   process.exit();
 });
