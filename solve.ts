@@ -1,5 +1,5 @@
 // 문제 : 회원 등급(grade)에 따라 읽기, 쓰기, 삭제 권한 부여
-// 
+
 
 
 // function solution(grade: string) {
@@ -35,7 +35,7 @@
 // }
 
 
-// 윤년 문제
+// // 윤년 문제
 // function solution(year: number) {
 //     if(year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
 //         console.log(1)
@@ -58,7 +58,7 @@
 //     }
 // }
 
-// 오븐문제
+// // 오븐문제
 // function solution(hour: number, minutes: number) {
 //   // 1. 시간은 24시간
 //   // 2. 분은 60분
@@ -82,4 +82,4 @@
 // }
 
 
-// export default solution;
+export default solution;
