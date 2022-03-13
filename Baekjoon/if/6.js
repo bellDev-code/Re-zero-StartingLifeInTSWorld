@@ -26,11 +26,14 @@ rl.on('line', function (line) {
   const addMinutes = cookMinutes % 60;
   
   let hour = (oriHour + addHour) % 24;
+
   let minutes = oriMinutes;
 
-  if (oriMinutes + addMinutes > 60) {
+  if (oriMinutes + addMinutes >= 60) {
     hour++;
-
+    if (hour >= 24) {
+      hour = 0;
+    }
     const remain =  oriMinutes + addMinutes - 60
     minutes = remain;
   } else {
