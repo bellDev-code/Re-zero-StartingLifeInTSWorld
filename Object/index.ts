@@ -22,7 +22,7 @@ delete obj6['name']
 
 // 키 접근 1번 방법
 const result = obj.name
-console.log(result)
+// console.log(result)
 // 키 접근 2번 방법
 obj['name']
 
@@ -110,16 +110,16 @@ function solution2(num: number) {
 }
 
 // 짝수가 제거된 길이 50까지의 오브젝트
-const result2 = solution2(50)
+// const result2 = solution2(50)
 
-const keys = Object.keys(result2)
-const values = Object.values(result2)
+// const keys = Object.keys(result2)
+// const values = Object.values(result2)
 
-console.log(keys)
-console.log(values)
+// console.log(keys)
+// console.log(values)
 
-const entries = Object.entries(result2)
-console.log(entries)
+// const entries = Object.entries(result2)
+// console.log(entries)
 
 
 /** 전체 다 찍기
@@ -130,6 +130,43 @@ console.log(entries)
  * 키 7의 값은 49입니다
  * ...
  */
+
+function objectPractice(num: number) {
+  let obj3: Record<number, number> = {}
+
+  for(let i = 1; i <= num; i++) {
+    obj3[i] = i * i
+  }
+  return obj3
+}
+
+const result3 = objectPractice(10)
+
+// for(const [key, value] of Object.entries(result3)) {
+//   console.log(`키 ${key}의 값은 ${value}입니다`)
+// }
+
+function objectPractice2(num: number) {
+  let obj4: Record<number, number> = {}
+
+  for(let i = 1; i <= num; i++) {
+    obj4[i] = i * i
+  }
+  
+  for(let i = 1; i <= num; i++) {
+    if(i % 2 === 0) {
+      const { [i]: _, ...keyName } = obj4
+      obj4 = keyName
+    }
+  }
+  return obj4
+}
+
+const result4 = objectPractice2(30)
+
+for(const [key, value] of Object.entries(result4)) {
+  console.log(`키 ${key}의 값은 ${value}입니다`)
+}
 
 /** 30 이하만
  * 
