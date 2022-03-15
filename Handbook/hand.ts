@@ -174,13 +174,13 @@ mySearch = function(src: string, sub: string): boolean {
 //     return "string";
 // }
 
-interface StringArray {
-    [index: number]: string; 
-}
+// interface StringArray {
+//     [index: number]: string; 
+// }
 
-let myArray: StringArray;
-myArray = ["Bob", "Fred"]
+// let myArray: StringArray;
+// myArray = ["Bob", "Fred"]
 
-let myStr: string = myArray[0];
+// let myStr: string = myArray[0];
 
-console.log(myStr)
+// console.log(myStr)
