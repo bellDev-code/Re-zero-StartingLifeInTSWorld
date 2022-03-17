@@ -1,20 +1,38 @@
-const readline = require('readline');
+import readline from "readline";
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
-let input = [];
-
-
-rl.on('line', function (line) {
-    let n = Number(line)
-
-  for(let i = 1; i <= 9; i++) {
-    console.log(`${n} * ${i} = ${n * i}`)
-  }
-
-}).on('close', function () {
+rl.on("close", function () {
   process.exit();
 });
+
+function question(query: string = "") {
+  return new Promise<string>(function (resolve) {
+    rl.question(query, function (input) {
+      resolve(input);
+    });
+  });
+}
+
+function solution(inputs: string[]) {
+  console.log(inputs);
+}
+
+async function exec() {
+  const inputCount = parseInt(await question(""), 10);
+
+  if (isNaN(inputCount)) throw new Error("first input should be number");
+
+  const cases = [];
+  for (let i = 0; i < inputCount; i++) {
+    cases.push(await question());
+  }
+
+  solution(cases);
+  process.exit();
+}
+
+exec();
