@@ -1,5 +1,5 @@
 const fs = require('fs');
-let input = fs.readFileSync('1.txt').toString().split('\n');
+let input = fs.readFileSync('2.txt').toString().split('\n');
 
 const [count] = input;
 
