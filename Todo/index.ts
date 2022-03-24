@@ -1,6 +1,6 @@
 // import 모듈명 from ""
 // import {} from ""
-import { addTodo } from "./AddTodo";
+import { addTodo } from "./addTodo";
 import { deleteTodo } from "./deleteTodo";
 import { todayTodo } from "./contents";
 import {randomDate} from "./utils"
