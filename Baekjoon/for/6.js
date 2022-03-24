@@ -1,10 +1,23 @@
-const fs = require('fs');
-let input = fs.readFileSync('6.txt').toString().split('\n');
+const readline = require('readline');
 
-const [count] = input;
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
-for(let i=0; i<count; i++) {
-  const [a, b] = input[i + 1].split(" ");
-  console.log(`Case #${i + 1}: ${parseInt(a) + parseInt(b)}`)
-}
+let input = [];
 
+
+rl.on('line', function (line) {
+    let input = Number(line)
+    
+    let result = '';
+
+    for(let i = input; i >= 1; i--) {
+      result += `${i}\n`
+    }
+    console.log(result)
+
+}).on('close', function () {
+  process.exit();
+});

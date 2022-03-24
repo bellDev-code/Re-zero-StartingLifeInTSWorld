@@ -7,13 +7,14 @@ const rl = readline.createInterface({
 
 let input = [];
 
-
+// 변수 겹침 주의 필요
 rl.on('line', function (line) {
-    let input = Number(line)
+    const input = Number(line)
     
     let result = '';
 
-    for(let i = input; i >= 1; i--) {
+    // input -> Number(line)
+    for(let i = 1; i < input; i++) {
       result += `${i}\n`
     }
     console.log(result)
