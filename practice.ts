@@ -118,7 +118,7 @@ interface Animal {
   name: string
 }
 
-interface Animal {
+interface Animal {  
   honey: boolean
 }
 

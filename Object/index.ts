@@ -132,7 +132,7 @@ function solution2(num: number) {
  */
 
 function objectPractice(num: number) {
-  let obj3: Record<number, number> = {}
+  const obj3: Record<number, number> = {}
 
   for(let i = 1; i <= num; i++) {
     obj3[i] = i * i
@@ -140,7 +140,7 @@ function objectPractice(num: number) {
   return obj3
 }
 
-const result3 = objectPractice(10)
+// const result3 = objectPractice(10)
 
 // for(const [key, value] of Object.entries(result3)) {
 //   console.log(`키 ${key}의 값은 ${value}입니다`)

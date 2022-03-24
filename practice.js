@@ -108,3 +108,4 @@ function print(char) {
     console.log(char);
 }
 print("흐에");
+
