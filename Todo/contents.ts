@@ -11,4 +11,14 @@ export function todayTodo(todolist: TodoItem[]) {
 // 이 두 날짜 사이에 있는 Todo만 출력
 // function test
 
+// startD가 랜덤데이트 결과값일때
+export function compareDate(startD: Date, endD: Date) {
+    if(startD < endD) {
+        return startD
+    } else {
+        return endD
+    }
+}
+
+
 // test(new Date(2022, 1, 3), new Date(2022,2,4))
