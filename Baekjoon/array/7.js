@@ -1,18 +1,27 @@
-const fs = require('fs');
-let input = fs.readFileSync('7.txt').toString().split('\n');
+const fs = require("fs");
+let input = fs.readFileSync("7.txt").toString().split("\n");
 
-// console.log(input)
-const num = Number(input[0])
+let allCases = Number(input[0]);
 
-// console.log(num)
+for (let i = 1; i <= allCases; i++) {
+  let cases = input[i].split(" ");
+  let scoreCaseCount = Number(cases[0]);
+  let sum = 0;
 
-for(let i = 1; i <= num; i++) {
-    let newArr = input[i].split(' ')
-    const firstValue = Number(newArr[0])
-    let sum = 0
+  for (let j = 1; j <= scoreCaseCount; j++) {
+    sum += Number(cases[j]);
+  }
 
-    for(let j = 1; j < firstValue; j++) {
-        sum = Number(firstValue[j])
+  let reverage = sum / scoreCaseCount;
+
+  let highScoreStudent = 0;
+
+  for (let k = 1; k <= scoreCaseCount; k++) {
+    if (reverage < cases[k]) {
+      highScoreStudent++;
     }
-}
+  }
 
+  result = ((highScoreStudent / scoreCaseCount) * 100).toFixed(3);
+  console.log(result + "%");
+}

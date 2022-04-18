@@ -1,6 +1,6 @@
-import { TodoItem } from '.';
+import { TodoItem } from ".";
 
-type SortType = 'asc' | 'desc';
+type SortType = "asc" | "desc";
 
 type SortOptions = {
   type: SortType;
@@ -38,19 +38,27 @@ export function sortTodo(todolist: TodoItem[], options: SortOptions) {
   const [first] = todolist;
 
   switch (typeof first[key]) {
-    case 'string':
-      if (type === 'asc') {
-        todolist.sort((a, b) => (a[key] as string).localeCompare(b[key] as string));
+    case "string":
+      if (type === "asc") {
+        todolist.sort((a, b) =>
+          (a[key] as string).localeCompare(b[key] as string)
+        );
       } else {
-        todolist.sort((a, b) => (b[key] as string).localeCompare(a[key] as string));
+        todolist.sort((a, b) =>
+          (b[key] as string).localeCompare(a[key] as string)
+        );
       }
       break;
     default:
       if (first[key] instanceof Date) {
-        if (type === 'asc') {
-          todolist.sort((a, b) => (a[key] as Date).getTime() - (b[key] as Date).getTime());
+        if (type === "asc") {
+          todolist.sort(
+            (a, b) => (a[key] as Date).getTime() - (b[key] as Date).getTime()
+          );
         } else {
-          todolist.sort((a, b) => (b[key] as Date).getTime() - (a[key] as Date).getTime());
+          todolist.sort(
+            (a, b) => (b[key] as Date).getTime() - (a[key] as Date).getTime()
+          );
         }
       }
   }
