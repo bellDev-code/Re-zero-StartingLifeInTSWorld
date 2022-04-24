@@ -1,4 +1,4 @@
-// 자기자신 + 각 자리의 숫자의 합으로 구분
+// 어떤 정수와, 그 정수의 각 자리 숫자의 합으로 나타낼 수 없는 수
 
 function notSelfNum(n) {
   // 숫자 하나를 더하는 함수
@@ -6,6 +6,7 @@ function notSelfNum(n) {
   // n자리 숫자 1의 자리 더하고 1의 자리를 제거, 모든 자리수 다 더하자
   let sum = n;
 
+  // 자리수 구하기
   while (true) {
     if (n === 0) {
       break; // 1의 자리 수 제거, 결국 1의 자리 0
@@ -36,4 +37,4 @@ function selfPlusNum(n) {
   }
 }
 
-selfPlusNum(100000);
+selfPlusNum(10000);
