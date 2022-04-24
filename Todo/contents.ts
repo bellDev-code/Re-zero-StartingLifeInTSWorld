@@ -1,24 +1,88 @@
 import { TodoItem } from ".";
 
-export function todayTodo(todolist: TodoItem[]) {
-  for (let i = 0; i < todolist.length; i++) {
-    console.log(
-      `[${todolist[i].title}] 오늘의 할일은 ${todolist[i].content}이며, 생성된 날짜는 ${todolist[i].createdAt}입니다.`
-    );
-  }
+type ReadListOptions = {
+  dateRange?: DateRange;
+  search?: SearchOptions;
+};
+
+type SearchOptions = {
+  keyword: string;
+  key: keyof TodoItem;
+};
+
+type DateRange = {
+  to: Date;
+  from: Date;
+};
+
+// 지금은 전체 출력, 옵션을 줘서 특정 기간별 사이에 있는 데이터만 출력하기
+
+// todolist의 createAt 시간과 특정 기간 비교
+export function getTodoList(todolist: TodoItem[], options: ReadListOptions) {
+  return display(apply(todolist, options));
 }
 
-// function 하나 만들어서
-// start: Date, end: Date
-// 이 두 날짜 사이에 있는 Todo만 출력
-// function test
+function apply(origin: TodoItem[], options: ReadListOptions) {
+  const { dateRange, search } = options;
+  let list: TodoItem[] = [];
 
-// startD가 랜덤데이트 결과값일때
-export function compareDate(startD: Date, endD: Date) {
-  if (startD < endD) {
-    return startD;
-  } else {
-    return endD;
+  /**
+   * dateRange
+   * keyword
+   * dateRange, keyword
+   * x
+   */
+
+  // if (dateRange && keyword) {
+  //   return origin.filter(
+  //     (e) =>
+  //       e.createdAt.getTime() > dateRange.from.getTime() &&
+  //       e.createdAt.getTime() < dateRange.to.getTime() &&
+  //       e.content.indexOf(keyword) > -1
+  //   );
+  // }
+
+  /**
+   *
+   * @Todo
+   *
+   * search.key 에 따라 검색
+   *
+   */
+
+  for (let i = 0; i < origin.length; i++) {
+    if (dateRange && keyword) {
+      if (
+        origin[i].createdAt.getTime() > dateRange.from.getTime() &&
+        origin[i].createdAt.getTime() < dateRange.to.getTime() &&
+        origin[i].content.indexOf(keyword) > -1
+      ) {
+        list.push(origin[i]);
+      }
+    } else if (dateRange) {
+      if (
+        origin[i].createdAt.getTime() > dateRange.from.getTime() &&
+        origin[i].createdAt.getTime() < dateRange.to.getTime()
+      ) {
+        list.push(origin[i]);
+      }
+    } else if (keyword) {
+      if (origin[i].content.indexOf(keyword) > -1) {
+        list.push(origin[i]);
+      }
+    } else {
+      for (let i = 0; i < origin.length; i++) {
+        list.push(origin[i]);
+      }
+    }
+  }
+
+  return list;
+}
+
+function display(list: TodoItem[]) {
+  for (const item of list) {
+    console.log(`${item.id} [${item.title}] 오늘의 할일은 ${item.content}이며, 생성된 날짜는 ${item.createdAt}입니다.`);
   }
 }
 

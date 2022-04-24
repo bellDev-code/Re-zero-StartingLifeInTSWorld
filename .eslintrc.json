@@ -6,6 +6,5 @@
   "env": {
     "node": true
   },
-  "plugins": ["prettier"],
-  "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"]
+  "extends": ["prettier"]
 }
