@@ -24,6 +24,7 @@ function isHansoo(input) {
       continue;
     }
 
+    // 현재 작성한 코드는 1000자리 수가 들어오면 맞지 않는다.
     // 입력값이 110이므로 101, 102, 103, ... 110 등 처리해야함.
     // ex) 101이 들어온다면 1 - 0 = 1 (세자리까지밖에 안됨)
     // let tenSetNum = parseInt(hansoo[0]) - parseInt(hansoo[1]);
