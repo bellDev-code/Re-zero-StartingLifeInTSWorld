@@ -47,6 +47,9 @@ function apply(origin: TodoItem[], options: ReadListOptions) {
    * @Todo
    *
    * search.key 에 따라 검색
+   * sort 키 값
+   * title, content 등등 검색할 수 있게
+   * 지금은 content로 밖에 검색이 안된다.
    *
    */
 
