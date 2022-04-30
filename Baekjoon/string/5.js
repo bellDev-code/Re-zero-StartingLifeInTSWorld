@@ -19,6 +19,8 @@ for (let j = 0; j < toUpperCase.length; j++) {
   }
 }
 
+// 질문하기
+
 console.log(alphArr);
 console.log(toUpperCase);
 console.log(newArr);
