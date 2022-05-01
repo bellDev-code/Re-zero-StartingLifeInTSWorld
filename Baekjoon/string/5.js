@@ -19,7 +19,8 @@ for (let j = 0; j < toUpperCase.length; j++) {
   }
 }
 
-// 질문하기
+// MISSISSIPI 해당 하는 알파벳의 갯수까지는 찾음
+// 다음단계 어떻게 진행할지 질문하기
 
 console.log(alphArr);
 console.log(toUpperCase);

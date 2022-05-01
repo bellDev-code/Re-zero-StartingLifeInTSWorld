@@ -2,6 +2,8 @@ const fs = require("fs");
 let input = fs.readFileSync("8.txt").toString();
 console.log(input);
 
+// 밑 코드 말고 다른 방식 물어보기
+
 let result = 0;
 
 for (let i = 0; i < input.length; i++) {
