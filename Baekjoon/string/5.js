@@ -1,8 +1,6 @@
 const fs = require("fs");
 let input = fs.readFileSync("5.txt").toString().split("\n");
 
-console.log(input);
-
 const newArr = new Array(26).fill(0);
 const alphArr = [];
 const toUpperCase = input[0].toUpperCase().split("");
@@ -40,24 +38,23 @@ if (count > 1) {
   console.log(alphArr[maxIndex]);
 }
 
-console.log(maxIndex, count);
-let maxValue = newArr[0];
+// let maxValue = newArr[0];
 
 // 카드 예시
 
-for (let i = 1; i < newArr.length; i++) {
-  if (newArr[i] > maxValue) {
-    maxValue = newArr[i];
-  }
-}
+// for (let i = 1; i < newArr.length; i++) {
+//   if (newArr[i] > maxValue) {
+//     maxValue = newArr[i];
+//   }
+// }
 
-let minValue = newArr[0];
+// let minValue = newArr[0];
 
-for (let i = 1; i < newArr.length; i++) {
-  if (newArr[i] < minValue) {
-    minValue = newArr[i];
-  }
-}
+// for (let i = 1; i < newArr.length; i++) {
+//   if (newArr[i] < minValue) {
+//     minValue = newArr[i];
+//   }
+// }
 
 // console.log(maxIndex, alphArr[maxIndex], maxValue, minValue);
 
