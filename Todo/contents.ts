@@ -1,5 +1,9 @@
 import { TodoItem } from ".";
 
+type StringFilter<T> = {
+  [K in keyof T]: T[K] extends string ? K : never;
+}[keyof T];
+
 type ReadListOptions = {
   dateRange?: DateRange;
   search?: SearchOptions;
@@ -7,7 +11,7 @@ type ReadListOptions = {
 
 type SearchOptions = {
   keyword: string;
-  key: keyof TodoItem;
+  key: StringFilter<TodoItem>;
 };
 
 type DateRange = {
@@ -54,11 +58,11 @@ function apply(origin: TodoItem[], options: ReadListOptions) {
    */
 
   for (let i = 0; i < origin.length; i++) {
-    if (dateRange && keyword) {
+    if (dateRange && search) {
       if (
         origin[i].createdAt.getTime() > dateRange.from.getTime() &&
         origin[i].createdAt.getTime() < dateRange.to.getTime() &&
-        origin[i].content.indexOf(keyword) > -1
+        origin[i][search.key].indexOf(search.keyword) > -1
       ) {
         list.push(origin[i]);
       }
@@ -69,8 +73,8 @@ function apply(origin: TodoItem[], options: ReadListOptions) {
       ) {
         list.push(origin[i]);
       }
-    } else if (keyword) {
-      if (origin[i].content.indexOf(keyword) > -1) {
+    } else if (search) {
+      if (origin[i][search.key].indexOf(search.keyword) > -1) {
         list.push(origin[i]);
       }
     } else {

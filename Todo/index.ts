@@ -52,13 +52,13 @@ function exec() {
      * @Todo
      *  */
     search: {
-      keyword: "lol",
-      key: "content",
+      keyword: "3title",
+      key: "title",
     },
   });
 }
 
-// 오늘의 할일은 ~이며 생성된 날짜는 ~입니다.
+// 오늘의 할일은 ~이며 생성된 날짜는 ~입니다.title
 
 exec();
 

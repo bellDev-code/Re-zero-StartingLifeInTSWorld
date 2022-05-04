@@ -1,8 +1,37 @@
 const fs = require("fs");
 let input = fs.readFileSync("8.txt").toString();
-console.log(input);
+// console.log(input);
 
 // 밑 코드 말고 다른 방식 물어보기
+
+const map = {
+  A: 2,
+  B: 2,
+  C: 2,
+  D: 3,
+  E: 3,
+  F: 3,
+  G: 4,
+  H: 4,
+  I: 4,
+};
+
+map["C"] = 3;
+
+const hashmap = new Map();
+
+hashmap.set("A", 3);
+hashmap.set("B", 3);
+hashmap.set("C", 3);
+hashmap.set("D", 3);
+hashmap.set("E", 3);
+
+hashmap.get("A");
+
+for (let i = 0; i < input.length; i++) {
+  const char = input[i];
+  console.log(map[char]);
+}
 
 let result = 0;
 
@@ -26,4 +55,4 @@ for (let i = 0; i < input.length; i++) {
   }
 }
 
-console.log(result);
+// console.log(result);

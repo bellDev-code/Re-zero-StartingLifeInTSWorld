@@ -32,9 +32,25 @@ function isHansoo(input) {
     // let oneSetNum = parseInt(hansoo[1]) - parseInt(hansoo[2]);
 
     // ex) 101은 1과 -1이므로 한수가 아니다. 100부터 110까지는 한수가 아님.
-    if (tenSetNum === oneSetNum) {
-      count++;
+    // if (tenSetNum === oneSetNum) {
+    //   count++;
+    // }
+
+    const list = hansoo.split("");
+
+    let diff;
+    let isHansoo = true;
+    for (let i = 0; i < list.length - 1; i++) {
+      const currentDiff = parseInt(list[i]) - parseInt(list[i + 1]);
+
+      if (typeof diff === "number" && diff !== currentDiff) {
+        isHansoo = false;
+        break;
+      }
+      diff = currentDiff;
     }
+
+    if (isHansoo) count++;
   }
   console.log(count);
 }
