@@ -3,6 +3,7 @@ let input = parseInt(fs.readFileSync("3.txt"));
 
 console.log(input);
 
+// 분수찾기
 // 공통점이나 찾는 방법을 모르겠음
 
 // 1 홀
