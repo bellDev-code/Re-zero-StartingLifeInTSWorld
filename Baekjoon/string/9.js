@@ -18,7 +18,8 @@ let croArr = ["c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="];
 // };
 
 for (const char of croArr) {
-  input = input.split(char).join("#");
+  input = input.split(char).join(" ");
+  console.log(input);
 }
 
 console.log(input.length);

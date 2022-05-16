@@ -26,3 +26,16 @@ console.log(input);
 
 // 7 홀
 // 4/1
+
+let a = 1;
+let b = 1;
+
+let temp;
+
+const num = parseInt(input);
+
+for (let i = 0; i < num; i++) {
+  if (a <= 1) {
+    b++;
+  }
+}

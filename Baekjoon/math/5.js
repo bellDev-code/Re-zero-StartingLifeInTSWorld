@@ -13,9 +13,9 @@ let newArr = input.map((e) => e.split(" "));
 let result = "";
 
 for (let i = 0; i < num; i++) {
-  let height = newArr[i][0];
+  let height = parseInt(newArr[i][0]);
 
-  let sequence = newArr[i][2];
+  let sequence = parseInt(newArr[i][2]);
 
   let resultH = sequence % height;
 
